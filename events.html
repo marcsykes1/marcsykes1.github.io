@@ -15,44 +15,37 @@
             },
             events: [
                 {
+                    title: 'Buzz in Power Summit!', 
+                    start: '2024-09-26T08:00:00-04:00',
+                    end: '2024-09-26T18:00:00-04:00',
+                    description: 'RealDesk will be at the Buzz in Power Summit 2024 at the Liberty Grand in Toronto.',
+                    url: 'https://thebuzzconference.com'
+                },
+                {
+                    title: 'Pacific West 2024!', 
+                    start: '2024-09-30T08:00:00-04:00',
+                    end: '2024-10-02T21:00:00-04:00',
+                    description: 'RealDesk will be in Vancouver for Pacific West 2024 — come find us at booth 605!',
+                    url: 'https://www.pacificwest.ca'
+                },  
+                {
                     title: 'Intro to RealDesk', 
-                    start: '2024-08-22T14:00:00-04:00',
-                    end: '2024-08-22T14:30:00-04:00',
+                    start: '2024-10-10T14:00:00-04:00',
+                    end: '2024-10-10T14:30:00-04:00',
                     description: 'An overview of the RealDesk platform and how it can make a difference for your brokerage.',
                     url: 'https://tidycal.com/marcsykes/intro-to-realdesk'
                 },
                 {
                     title: 'Intro to RealDesk', 
-                    start: '2024-08-29T14:00:00-04:00',
-                    end: '2024-08-29T14:30:00-04:00',
+                    start: '2024-10-24T14:00:00-04:00',
+                    end: '2024-10-24T14:30:00-04:00',
                     description: 'An overview of the RealDesk platform and how it can make a difference for your brokerage.',
                     url: 'https://tidycal.com/marcsykes/intro-to-realdesk'
-                },
-                {
-                    title: 'Intro to RealDesk', 
-                    start: '2024-09-05T14:00:00-04:00',
-                    end: '2024-09-05T14:30:00-04:00',
-                    description: 'An overview of the RealDesk platform and how it can make a difference for your brokerage.',
-                    url: 'https://tidycal.com/marcsykes/intro-to-realdesk'
-                },
-                {
-                    title: 'Intro to RealDesk', 
-                    start: '2024-09-12T14:00:00-04:00',
-                    end: '2024-09-12T14:30:00-04:00',
-                    description: 'An overview of the RealDesk platform and how it can make a difference for your brokerage.',
-                    url: 'https://tidycal.com/marcsykes/intro-to-realdesk'
-                },
-                {
-                    title: 'Intro to RealDesk', 
-                    start: '2024-09-19T14:00:00-04:00',
-                    end: '2024-09-19T14:30:00-04:00',
-                    description: 'An overview of the RealDesk platform and how it can make a difference for your brokerage.',
-                    url: 'https://tidycal.com/marcsykes/intro-to-realdesk'
-                },                
+                },   
             ],
             eventDidMount: function(info) {
                 var tooltip = new bootstrap.Tooltip(info.el, {
-                    title: info.event.title + '<br/>' + info.event.extendedProps.description + '<br/>' + 'Click to sign up!',
+                    title: info.event.title + '<br/>' + info.event.extendedProps.description + '<br/>' + 'Click to learn more!',
                     html: true,
                     placement: 'top',
                     trigger: 'hover',
