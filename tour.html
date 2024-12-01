@@ -15,20 +15,28 @@
                 hiddenField: document.getElementById('hiddenField').value,
             };
 
+            if (formData.hiddenField) {
+                console.warn('Spam detected. Form submission aborted.');
+                alert('Form submission detected as spam. Please try again.');
+                return; // Abort form submission
+            }
+
             try {
                 // Send data to Google Apps Script
-                const response = await fetch('https://script.google.com/macros/s/AKfycbyL7H3ek7ysSqh9K5fOOZzBJ_yqb1pzGsEP857MxA5jUtwQNoN_eXVPoT-pywXXed73kA/exec', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbzVAyf61-WuocGWknKbUPQQ8Az6WfzNwW5saSYGn0y0lCqljhy4rWVYW6RNUVRtmtwnMg/exec', {
                     method: 'POST',
-                    body: JSON.stringify(formData),
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: {
+                        'Content-Type': 'text/plain', // Plain text avoids preflight
+                    },
+                    body: JSON.stringify(formData), // Convert form data to plain text
                 });
 
                 if (response.ok) {
                     console.log('Form data successfully sent to Google Sheet.');
                     alert('Form submitted successfully!');
                 } else {
-                    console.error('Error submitting form data to Google Sheet.');
-                    alert('There was a problem submitting the form. Please try again.');
+                    alert('Failed to submit the form.');
+                    console.error('Error response:', response);
                 }
             } catch (error) {
                 console.error('Error submitting form:', error);
